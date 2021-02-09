@@ -1,1 +1,1 @@
-### simple flashcard for quran remainder using https://api.quran.sutanlab.id 
+### simple flashcard to help reminder ayat in the quran 

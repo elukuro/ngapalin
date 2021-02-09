@@ -4,7 +4,7 @@ import API from "./../api/index.js";
 function renderSurah(surah) {
   return(
     <div>
-      {surah.map((item) => {return(<div>{item.name.transliteration.id}</div>)})}
+      {surah.map((item) => {return(<div>{item.surat_name}</div>)})}
     </div>
   )
 }
