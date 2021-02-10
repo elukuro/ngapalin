@@ -3,7 +3,8 @@ import API from "./../api/index.js";
 
 function renderSurah(surah) {
   return(
-    <div>
+    <div className="px-4 animate__animated animate__slideInLeft">
+      <input type="text" placeholder="Cari surat"/>
       {surah.map((item) => {return(<div>{item.surat_name}</div>)})}
     </div>
   )
