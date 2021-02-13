@@ -1,0 +1,13 @@
+.step{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    span{
+        background: rgba(127, 127, 213, 0.7);
+        display: block;
+        width:50px;
+        height:50px;
+        border-radius: 50px;
+        line-height: 1.4em;
+    }
+}

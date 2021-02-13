@@ -10,7 +10,7 @@ import {
 
 function App() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto font-sans">
       <Router>
         <Switch>
           <Route exact path='/'>

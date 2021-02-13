@@ -1,0 +1,14 @@
+.loading{
+    background: #7F7FD5;
+    width:100%;
+    height:100vh;
+    .logo{
+        width:100%;
+        position: absolute;
+        display: block;
+        bottom:20%;
+        img{
+            margin:0 auto;
+        }
+    }
+}
