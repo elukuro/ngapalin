@@ -1,7 +1,22 @@
 .scroll{
     height:55vh;
+    position: relative;
+    padding-bottom:20px;
     &:before{
         width:100%;
-        content:''
+        position: fixed;
+        content:'';
+        height: 40px;
+        box-shadow: inset 0px 40px 16px 0px #fafafa
+        
+    }
+    &:after{
+        width:100%;
+        position: fixed;
+        bottom:0px;
+        content:'';
+        height: 40px;
+        box-shadow: inset 0px 40px 16px 0px #fafafa;
+        transform: rotate(180deg);
     }
 }

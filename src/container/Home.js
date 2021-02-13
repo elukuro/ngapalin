@@ -13,8 +13,8 @@ function renderSurah(surah) {
       <div className="overflow-scroll	overflow-x-hidden scroll">
         {surah.map((item) => {
           return(
-            <div className="my-5">
-              <UiCard key={item.surat_name} content = {item.surat_name}/>
+            <div className="my-5" key={item.surat_name}>
+              <UiCard content = {item.surat_name}/>
             </div>
           )
         })}
