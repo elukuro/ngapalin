@@ -7,16 +7,25 @@
         position: fixed;
         content:'';
         height: 40px;
-        box-shadow: inset 0px 40px 16px 0px #fafafa
-        
+        box-shadow: inset 0px 4px 5px 0px #fafafa;
     }
     &:after{
         width:100%;
         position: fixed;
-        bottom:0px;
+        bottom:50px;
         content:'';
         height: 40px;
         box-shadow: inset 0px 40px 16px 0px #fafafa;
         transform: rotate(180deg);
+    }
+}
+
+.arrow{
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    img{
+        width:15px;
+        height:7px;
     }
 }

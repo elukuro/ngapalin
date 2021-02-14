@@ -1,37 +1,49 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useCallback } from "react";
 import API from "./../api/index.js";
 import UiLoading from "./../components/Loading";
 import UiStep from "./../components/Step";
 import UiCard from "./../components/Card";
 import "./../styles/container/home.scss";
 
-function renderSurah(surah) {
-  return(
-    <div className="px-4">
-      <UiStep step="1" />
-      <p className="text-center container mx-auto font-extralight text-xl my-10">Pilih surat</p>
-      <div className="overflow-scroll	overflow-x-hidden scroll">
-        {surah.map((item) => {
-          return(
-            <div className="my-5" key={item.surat_name}>
-              <UiCard content = {item.surat_name}/>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
 
 function Home() {
-  const [surah, setSurah] = useState();
+  const [surahList, setSurahList] = useState();
+  const [surah,setSurah] = useState(0);
+
+  const selectSurah = useCallback(
+    (event,item) => {
+      event.preventDefault();
+      setSurah(item.count_ayat)
+    },
+    [],
+);
+ 
+  
   useEffect(() => {
     API.getSurah().then(function (result) {
-      setSurah(result.data);
+      setSurahList(result.data);
     });
   },[]);
-  if (surah) {
-    return renderSurah(surah)
+  if (surahList) {
+    return(
+      <div className="px-4">
+        <UiStep step="1" />
+        <p className="text-center container mx-auto font-extralight text-xl my-10">Pilih surat</p>
+        <div className="overflow-scroll	overflow-x-hidden scroll">
+          {surahList.map((item) => {
+            return(
+              <div className="my-5" key={item.surat_name}>
+                <UiCard content = {item.surat_name} onClick={(event)=> selectSurah(event,item)}/>
+              </div>
+            )
+          })}
+        </div>
+        <div className="arrow mt-4">
+          <span className="text-xs font-light mr-4">Selanjutnya</span>
+          <img src={`${process.env.PUBLIC_URL}/arrow.png`} alt="arrow" />
+        </div>  
+      </div>
+    )
   } else {
     return <UiLoading />
   }
