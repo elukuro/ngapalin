@@ -3,20 +3,20 @@ import API from "./../api/index.js";
 import UiLoading from "./../components/Loading";
 import UiStep from "./../components/Step";
 import UiCard from "./../components/Card";
+import {Link} from "react-router-dom"
 import "./../styles/container/home.scss";
 
 
 function Home() {
   const [surahList, setSurahList] = useState();
-  const [surah,setSurah] = useState(0);
-
+  const [surah,setSurah] = useState({id:null,count_ayat:null});
   const selectSurah = useCallback(
     (event,item) => {
       event.preventDefault();
-      setSurah(item.count_ayat)
+      setSurah(item)
     },
     [],
-);
+  );
  
   
   useEffect(() => {
@@ -38,10 +38,10 @@ function Home() {
             )
           })}
         </div>
-        <div className="arrow mt-4">
+        <Link className="arrow mt-4" to={`/surah/${surah.id}/${surah.count_ayat}`}>
           <span className="text-xs font-light mr-4">Selanjutnya</span>
           <img src={`${process.env.PUBLIC_URL}/arrow.png`} alt="arrow" />
-        </div>  
+        </Link>
       </div>
     )
   } else {
