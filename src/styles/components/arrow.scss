@@ -1,0 +1,14 @@
+.arrow{
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    img{
+        width:15px;
+        height:7px;
+    }
+}
+.prev{
+    img{
+        transform: rotate(180deg);
+    }
+}
