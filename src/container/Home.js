@@ -47,7 +47,7 @@ function Home() {
             )
           })}
         </div>
-        {surah.id !== null ? <UiArrow to={`/surah/${surah.id}/${surah.count_ayat}`} type="next" /> :''}
+        {surah.id !== null ? <UiArrow to={`/surah/${surah.id}`} type="next" /> :''}
       </div>
     )
   } else {

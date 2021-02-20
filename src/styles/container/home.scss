@@ -1,5 +1,5 @@
 .scroll{
-    height:55vh;
+    height:52vh;
     position: relative;
     padding-bottom:20px;
     &:before{
@@ -8,14 +8,5 @@
         content:'';
         height: 40px;
         box-shadow: inset 0px 4px 5px 0px #fafafa;
-    }
-    &:after{
-        width:100%;
-        position: fixed;
-        bottom:50px;
-        content:'';
-        height: 40px;
-        box-shadow: inset 0px 40px 16px 0px #fafafa;
-        transform: rotate(180deg);
     }
 }

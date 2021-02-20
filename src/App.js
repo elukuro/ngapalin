@@ -1,7 +1,9 @@
 import './styles/App.scss';
 import React from "react";
-import UiHome from "./container/Home";
-import UiAyah from "./container/Ayah";
+import UiStepOne from "./container/Home";
+import UiStepTwo from "./container/Ayah";
+import UiStepThree from "./container/Detail";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,10 +16,13 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/'>
-            <UiHome/>
+            <UiStepOne/>
           </Route>
-          <Route path='/surah/:surah/:ayat'>
-            <UiAyah/>
+          <Route path='/surah/:id/:ayat'>
+            <UiStepThree/>
+          </Route>
+          <Route path='/surah/:id'>
+            <UiStepTwo/>
           </Route>
         </Switch>
       </Router>
