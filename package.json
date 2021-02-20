@@ -8,7 +8,6 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",
-    "animate.css": "^4.1.1",
     "autoprefixer": "^9.8.6",
     "axios": "^0.21.1",
     "http-proxy-middleware": "^1.0.6",
@@ -23,8 +22,8 @@
   },
   "scripts": {
     "start": "craco start",
-     "build": "craco build",
-     "test": "craco test",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

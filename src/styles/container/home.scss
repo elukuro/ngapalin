@@ -1,5 +1,5 @@
 .scroll{
-    height:52vh;
+    height:40vh;
     position: relative;
     padding-bottom:20px;
     &:before{
@@ -9,4 +9,16 @@
         height: 40px;
         box-shadow: inset 0px 4px 5px 0px #fafafa;
     }
+}
+.ayat{
+    font-family: system-ui;
+    line-height: 4rem !important;
+}
+.bottom{
+    position:absolute;
+    position: absolute;
+    width: 100%;
+    display: block;
+    right: 20px;
+    bottom: 30px;
 }

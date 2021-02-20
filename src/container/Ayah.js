@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import {useParams} from "react-router-dom";
 
-import API from "./../api/index.js";
 import UiLoading from "./../components/Loading";
 import UiStep from "./../components/Step";
 import UiCard from "./../components/Card";
@@ -48,7 +47,9 @@ function Ayah() {
         })
       }
       </div>
-      {ayat !== null ? <UiArrow to={`/surah/${id}/${ayat}`} type="next" /> :''}
+      <div className="bottom">
+        {ayat !== null ? <UiArrow to={`/surah/${id}/${ayat}`} type="next" /> :''}
+      </div>
     </div>
   )
   }else{

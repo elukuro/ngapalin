@@ -47,7 +47,9 @@ function Home() {
             )
           })}
         </div>
-        {surah.id !== null ? <UiArrow to={`/surah/${surah.id}`} type="next" /> :''}
+        <div className="bottom">
+          {surah.id !== null ? <UiArrow to={`/surah/${surah.id}`} type="next" /> :''}
+        </div>
       </div>
     )
   } else {
