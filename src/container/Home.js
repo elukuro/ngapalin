@@ -6,7 +6,6 @@ import UiCard from "./../components/Card";
 import UiArrow from "./../components/Arrow";
 
 import {Link} from "react-router-dom"
-import "./../styles/container/home.scss";
 
 
 function Home() {

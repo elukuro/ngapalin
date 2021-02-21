@@ -5,7 +5,6 @@ import UiLoading from "./../components/Loading";
 import UiStep from "./../components/Step";
 import UiCard from "./../components/Card";
 import UiArrow from "./../components/Arrow";
-import "./../styles/container/home.scss";
 
 
 function Ayah() {
