@@ -1,5 +1,5 @@
 .scroll{
-    height:40vh;
+    height:10vh;
     position: relative;
     padding-bottom:20px;
     &:before{
@@ -13,6 +13,9 @@
 .ayat{
     //font-family: system-ui;
     line-height: 4rem !important;
+    &--blur{
+        filter:blur(1rem);   
+    }
 }
 .bottom{
     position:absolute;
