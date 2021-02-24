@@ -58,8 +58,12 @@ function Detail() {
           </span>
         </div>
         <div className="container mt-20 mb-4 flex justify-between">
-          {(id !== null && ayat > 1) ? <UiArrow to={`/surah/${id}/${prevAyat}`} type="prev" text="Ayat Sebelumnya" /> :''}
-          {(id !== null && nextAyat <= parseInt(selectedSurah[0].count_ayat)) ? <UiArrow to={`/surah/${id}/${nextAyat}`} type="next" text="Ayat Selanjutnya" /> :''}
+          <span className={`${(id !== null && ayat > 1) ? "" : "hide"}`}>
+            <UiArrow to={`/surah/${id}/${prevAyat}`} type="prev" text="Ayat Sebelumnya"/>
+          </span>
+          <span className={`${(id !== null && nextAyat <= parseInt(selectedSurah[0].count_ayat)) ? "" : "hide"}`}>
+            <UiArrow to={`/surah/${id}/${nextAyat}`} type="next" text="Ayat Selanjutnya" />
+          </span>
         </div>
       </div>
     );

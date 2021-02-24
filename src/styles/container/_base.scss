@@ -1,5 +1,5 @@
 .scroll{
-    height:10vh;
+    height:40vh;
     position: relative;
     padding-bottom:20px;
     &:before{
@@ -24,4 +24,8 @@
     display: block;
     right: 20px;
     bottom: 30px;
+}
+
+.hide{
+    opacity: 0;
 }
