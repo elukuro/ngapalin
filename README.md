@@ -1,7 +1,13 @@
-### Nuun simple micro website untuk membantu menghafal ayat ayat di dalam alquran 🤲
+### Nuun sebuah micro website untuk membantu menghafal surat di dalam alquran 🤲
 
- ### Feature 😇
- - design simple dan minimal
- - Fokus satu ayat dalam satu waktu
+### Buildwith 
+- React (stateless)
+- Tailwind
+ ### Features 😇
+ - Desain simpel dan minimal
+ - Fokus pada satu ayat
  - blur / sembunyikan ayat
- - tafsir ayat dari kemenag
+ - tampilkan tafsir : On-progress
+ 
+ ### Data source 
+ - quran.kemenag.go.id
