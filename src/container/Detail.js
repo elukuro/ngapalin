@@ -29,7 +29,7 @@ function Detail() {
     setSurahList(filter(JSON.parse(localSurah)));
     // render detail surah 
     API.getDetail({id,ayat}).then(function (result) {
-      setRenderSurah(result.data);
+      setRenderSurah(result);
     });
   }, [ayat]);
 
