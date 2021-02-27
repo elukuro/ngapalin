@@ -1,8 +1,19 @@
 {
-  "short_name": "Npagalin",
-  "name": "Ngapalin",
-  "start_url": ".",
+  "name": "Nuun",
+  "short_name": "Nuun",
+  "description": "micro website untuk membantu menghafal surat di dalam alquran 🤲",
+  "scope": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait",
+  "theme_color": "#7F7FD5",
+  "background_color": "#7F7FD5",
+  "icons": [
+    {
+      "src": "logo@3x.png",
+      "sizes": "310x310",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
 }
