@@ -10,8 +10,8 @@
   "background_color": "#7F7FD5",
   "icons": [
     {
-      "src": "logo@3x.png",
-      "sizes": "310x310",
+      "src": "logo.inv.png",
+      "sizes": "45x54",
       "type": "image/png",
       "purpose": "any maskable"
     }

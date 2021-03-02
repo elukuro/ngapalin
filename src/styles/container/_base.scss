@@ -1,3 +1,8 @@
+@font-face {
+    font-family: arabicfont;
+    src: url("./../fonts//fonts.ttf");
+}
+
 .scroll{
     height:40vh;
     position: relative;
@@ -12,6 +17,7 @@
 }
 .ayat{
     //font-family: system-ui;
+    font-family: arabicfont;
     line-height: 4rem !important;
     &--blur{
         filter:blur(1rem);   
