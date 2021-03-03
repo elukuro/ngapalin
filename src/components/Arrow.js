@@ -23,7 +23,7 @@ function Arrow(props) {
 
   }
   return (
-    <Link className="arrow mt-4" to={props.to}>
+    <Link className="arrow mt-4" to={`${props.to}`}>
       {renderArrow()}
     </Link>
   );

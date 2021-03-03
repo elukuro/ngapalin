@@ -3,9 +3,9 @@ import React from "react";
 import UiStepOne from "./container/Home";
 import UiStepTwo from "./container/Ayah";
 import UiStepThree from "./container/Detail";
-
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route,
 } from "react-router-dom";
@@ -13,7 +13,7 @@ import {
 function App() {
   return (
     <div className="container mx-auto font-sans">
-      <Router>
+      <HashRouter>
         <Switch>
           <Route exact path='/'>
             <UiStepOne/>
@@ -25,7 +25,7 @@ function App() {
             <UiStepTwo/>
           </Route>
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
