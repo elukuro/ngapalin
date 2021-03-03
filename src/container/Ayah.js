@@ -29,7 +29,6 @@ function Ayah() {
   if (selectedSurah) {
   return(
     <div className="px-4">
-      <UiArrow to={'/'} type="prev"/>
       <UiStep step="2" />
       <p className="text-center container mx-auto font-extralight text-xl my-10">
         Surat <span className="">{selectedSurah[0].surat_name}</span>
@@ -39,14 +38,15 @@ function Ayah() {
       {
         [...Array(parseInt(selectedSurah[0].count_ayat)).keys()].map((num)=> {
           return(
-            <div className="my-5" key={num+1}>
+            <div className="" key={num+1}>
               <UiCard active = {`Ayat ${ayat}`} content = {`Ayat ${num +1}`} onClick={(event)=> RenderSurah(event,num+1)}/>
             </div>
           )
         })
       }
       </div>
-      <div className="bottom">
+      <div className="bottom container flex justify-between">
+        <UiArrow to={'/'} type="prev"/>
         {ayat !== null ? <UiArrow to={`/surah/${id}/${ayat}`} type="next" /> :''}
       </div>
     </div>

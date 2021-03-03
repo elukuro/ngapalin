@@ -4,15 +4,15 @@
 }
 
 .scroll{
-    height:40vh;
+    height:36vh;
     position: relative;
     padding-bottom:20px;
     &:before{
-        width:100%;
-        position: fixed;
-        content:'';
-        height: 40px;
-        box-shadow: inset 0px 4px 5px 0px #fafafa;
+        // width:100%;
+        // position: fixed;
+        // content:'';
+        // height: 20px;
+        // box-shadow: inset -3px 10px 6px 0px #fafafa;
     }
 }
 .ayat{
@@ -24,12 +24,15 @@
     }
 }
 .bottom{
-    position:absolute;
+    position: absolute;
     position: absolute;
     width: 100%;
     display: block;
-    right: 20px;
-    bottom: 30px;
+    right: 0px;
+    bottom: 16px;
+    left: 0px;
+    padding-left: 14px;
+    padding-right: 14px;
 }
 
 .hide{
