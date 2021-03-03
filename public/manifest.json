@@ -4,14 +4,14 @@
   "description": "micro website untuk membantu menghafal surat di dalam alquran 🤲",
   "scope": ".",
   "start_url": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "orientation": "portrait",
   "theme_color": "#7F7FD5",
-  "background_color": "#7F7FD5",
+  "background_color": "#fff",
   "icons": [
     {
       "src": "logo.inv.png",
-      "sizes": "45x54",
+      "sizes": "144x144",
       "type": "image/png",
       "purpose": "any maskable"
     }
