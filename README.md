@@ -1,16 +1,16 @@
 ### Nuun sebuah micro website untuk membantu menghafal surat di dalam alquran 🤲
 
-### Buildwith 
+### Dibuat dengan
 - React (stateless)
 - Tailwind
- ### Features 😇
+ ### Feature 😇
  - Desain simpel dan minimal
  - Fokus pada satu ayat
  - blur / sembunyikan ayat
  - tampilkan tafsir : On-progress
  
- ### Data source 
+ ### Sumber Data
  - quran.kemenag.go.id
 
- ## URL 
- [nuun project] [https://nuun-project.web.app]
+ ## DEMO 
+ [https://nuun-project.web.app]
