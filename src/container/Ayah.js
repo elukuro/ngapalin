@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import {useParams} from "react-router-dom";
-
+import API from "./../api/index.js";
 import UiLoading from "./../components/Loading";
 import UiStep from "./../components/Step";
 import UiCard from "./../components/Card";
@@ -22,8 +22,9 @@ function Ayah() {
   const [selectedSurah, setSurahList] = useState();
   const [ayat,setAyat] = useState(null);
   useEffect(()=>{
-    let localSurah  = localStorage.getItem('surah');
-    setSurahList(filter(JSON.parse(localSurah)));
+    API.getSurah().then(function (result) {
+      setSurahList(filter(result.data));
+    })
   },[]);
 
   if (selectedSurah) {

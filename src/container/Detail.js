@@ -23,13 +23,18 @@ function Detail() {
     return data.filter((data) => data.id === parseInt(payload));
   };
 
+  const saveLatestOpen = function() {
+    localStorage.setItem('latest',`${id}/${ayat}`);
+  };
   useEffect(() => {
     setRenderSurah();
-    let localSurah  = localStorage.getItem('surah');
-    setSurahList(filter(JSON.parse(localSurah)));
+    API.getSurah().then(function (result) {
+      setSurahList(filter(result.data));
+    })
     // render detail surah 
     API.getDetail({id,ayat}).then(function (result) {
       setRenderSurah(result);
+      saveLatestOpen();
     });
   }, [ayat]);
 

@@ -11,6 +11,7 @@ import {Link} from "react-router-dom"
 function Home() {
   const [surahList, setSurahList] = useState();
   const [surah,setSurah] = useState({id:null,count_ayat:null,surat_name:null});
+  const latestOpen = localStorage.getItem('latest');
   const selectSurah = useCallback(
     (event,item) => {
       event.preventDefault();
@@ -20,18 +21,10 @@ function Home() {
   );
   
   useEffect(() => {
-    // get localSurah
-    let localSurah  = localStorage.getItem('surah');
-    if(!localSurah){
       API.getSurah().then(function (result) {
         setSurahList(result.data);
-        localStorage.setItem('surah', JSON.stringify(result.data));
       });
-    }else{
-      // get surahList form localSurah
-      setSurahList(JSON.parse(localSurah));
-    }
-  },[]);
+   },[]);
   if (surahList) {
     return(
       <div className="px-4">
@@ -48,6 +41,7 @@ function Home() {
         </div>
         <div className="bottom">
           {surah.id !== null ? <UiArrow to={`/surah/${surah.id}`} type="next" /> :''}
+          {(latestOpen && surah.id === null) ? <UiArrow to={`/surah/${latestOpen}`} type="next" text="Ke terakhir dibuka" /> :''}
         </div>
       </div>
     )
