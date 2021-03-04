@@ -9,6 +9,7 @@ const check = () => {
 // I added a function that can be used to register a service worker.
 const registerServiceWorker = async () => {
     const swRegistration = await navigator.serviceWorker.register('service-worker.js'); //notice the file name
+    
     return swRegistration;
 }
 // const requestNotificationPermission = async () => {
