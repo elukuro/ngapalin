@@ -10,6 +10,7 @@ function Detail() {
   const [selectedSurah, setSurahList] = useState();
   const [renderSurah,setRenderSurah] = useState();
   const [isHide,setHide] = useState(false);
+  const [fontSize,setFontSize] = useState('md');
 
   let { id,ayat } = useParams();
   const nextAyat = parseInt(ayat)+1;
@@ -49,8 +50,28 @@ function Detail() {
         <p className="text-center container mx-auto font-extralight text-base my-5">
           *Ulangi bacaan beberapa kali
         </p>
-        <div className="text-center container mx-auto my-20">
-          <p className={`text-4xl ayat text-gray-500 ${(isHide) ? "ayat--blur" : ""}` }>
+        <div className="text-center container mx-auto my-10">
+          <div className="flex my-6 justify-end">
+            <span
+              className={` ${(fontSize === "sm") ? "bg-gray-700 text-white": "bg-gray-300"} text-xs font-extralight rounded-full h-6 w-6 flex items-center justify-center mr-1`}
+              onClick={()=>setFontSize('sm')}
+            >
+              A
+            </span>
+            <span
+              className={` ${(fontSize === "md") ? "bg-gray-700 text-white": "bg-gray-300"} text-base font-extralight rounded-full h-6 w-6 flex items-center justify-center mr-1`}
+              onClick={()=>setFontSize('md')}
+            >
+              A
+            </span>
+            <span
+              className={` ${(fontSize === "xl") ? "bg-gray-700 text-white": "bg-gray-300"} text-xl	 font-extralight rounded-full h-6 w-6 flex items-center justify-center`}
+              onClick={()=>setFontSize('xl')}
+            >
+              A
+            </span>
+          </div>
+          <p className={`${(fontSize ==='sm') ? "text-xl" : (fontSize === 'md') ? "text-2xl" :"text-4xl"} ayat text-gray-500 ${(isHide) ? "ayat--blur" : ""}` }>
             {
               renderSurah[0].aya_text
             }
