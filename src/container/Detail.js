@@ -5,11 +5,13 @@ import API from "./../api/index.js";
 import UiLoading from "./../components/Loading";
 import UiStep from "./../components/Step";
 import UiArrow from "./../components/Arrow";
+import UiModal from "./../components/Modal";
 
 function Detail() {
   const [selectedSurah, setSurahList] = useState();
   const [renderSurah,setRenderSurah] = useState();
   const [isHide,setHide] = useState(false);
+  const [isShowModal,setModal] = useState(false);
   const [fontSize,setFontSize] = useState('md');
 
   let { id,ayat } = useParams();
@@ -27,6 +29,7 @@ function Detail() {
   const saveLatestOpen = function() {
     localStorage.setItem('latest',`${id}/${ayat}`);
   };
+
   useEffect(() => {
     setRenderSurah();
     API.getSurah().then(function (result) {
@@ -42,10 +45,12 @@ function Detail() {
   if (renderSurah) {
     return (
       <div className="px-4">
+        <UiModal open={isShowModal} close={()=>setModal(false)}/>
         <UiArrow to={"/"} type="prev" text="Kembali pilih surat" />
         <UiStep step="3" />
         <p className="text-center container mx-auto font-extralight text-xl my-5">
-          Baca surat <span className="font-normal text-gray-700">{selectedSurah[0].surat_name}</span> ayat <span className="font-normal text-gray-700">{ayat}</span>
+          Baca surat <span className="font-normal text-gray-700">{selectedSurah[0].surat_name} </span>
+          <span className="underline" onClick={()=>setModal(true)}>Ayat <span className="font-normal text-gray-700 ">{ayat}</span></span>
         </p>
         <p className="text-center container mx-auto font-extralight text-base my-5">
           *Ulangi bacaan beberapa kali
