@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,useHistory } from "react-router-dom";
 
 import API from "./../api/index.js";
 import UiLoading from "./../components/Loading";
 import UiStep from "./../components/Step";
 import UiArrow from "./../components/Arrow";
 import UiModal from "./../components/Modal";
+import UiCard from "./../components/Card";
 
 function Detail() {
   const [selectedSurah, setSurahList] = useState();
@@ -15,6 +16,7 @@ function Detail() {
   const [fontSize,setFontSize] = useState('md');
 
   let { id,ayat } = useParams();
+  let history = useHistory();
   const nextAyat = parseInt(ayat)+1;
   const prevAyat = parseInt(ayat) -1;
 
@@ -28,6 +30,11 @@ function Detail() {
 
   const saveLatestOpen = function() {
     localStorage.setItem('latest',`${id}/${ayat}`);
+  };
+
+  const gotoAyat = function (payload) {
+    setModal(false)
+    history.push(`/surah/${id}/${payload}`)
   };
 
   useEffect(() => {
@@ -44,8 +51,20 @@ function Detail() {
 
   if (renderSurah) {
     return (
-      <div className="px-4">
-        <UiModal open={isShowModal} close={()=>setModal(false)}/>
+      <div className={`${(isShowModal) ? 'overflow-hidden max-h-96':''} px-4`}>
+        <UiModal open={isShowModal} close={()=>setModal(false)} title="Pilih ayat">
+          <div className="container mx-auto overflow-scroll	overflow-x-hidden scroll">
+            {
+              [...Array(parseInt(selectedSurah[0].count_ayat)).keys()].map((num)=> {
+                return(
+                  <div className="" key={num+1}>
+                    <UiCard active = {`Ayat ${ayat}`} content = {`Ayat ${num +1}`} onClick={()=> gotoAyat(num+1)}/>
+                  </div>
+                )
+              })
+            }
+          </div>
+        </UiModal>
         <UiArrow to={"/"} type="prev" text="Kembali pilih surat" />
         <UiStep step="3" />
         <p className="text-center container mx-auto font-extralight text-xl my-5">
