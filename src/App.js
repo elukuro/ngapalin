@@ -23,6 +23,7 @@ function App() {
         document.getElementById('body').classList.remove('dark:bg-gray-700')
       }
     } 
+    checkLocalStorage()
     window.addEventListener('storage', checkLocalStorage)
     return () => {
       window.removeEventListener('storage', checkLocalStorage)
