@@ -29,7 +29,7 @@ function Home() {
     return(
       <div className="px-4">
         <UiStep step="1" />
-        <p className="text-center container mx-auto font-extralight text-xl my-10">Pilih surat</p>
+        <p className="text-center container mx-auto font-extralight text-xl my-10 dark:text-gray-200">Pilih surat</p>
         <div className="overflow-scroll	overflow-x-hidden scroll">
           {surahList.map((item) => {
             return(

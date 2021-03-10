@@ -67,43 +67,43 @@ function Detail() {
         </UiModal>
         <UiArrow to={"/"} type="prev" text="Kembali pilih surat" />
         <UiStep step="3" />
-        <p className="text-center container mx-auto font-extralight text-xl my-5">
-          Baca surat <span className="font-normal text-gray-700">{selectedSurah[0].surat_name} </span>
-          <span className="underline" onClick={()=>setModal(true)}>Ayat <span className="font-normal text-gray-700 ">{ayat}</span></span>
+        <p className="text-center container mx-auto font-extralight text-xl my-5 dark:text-gray-200">
+          Baca surat <span className="font-normal text-gray-700 dark:text-gray-200">{selectedSurah[0].surat_name} </span>
+          <span className="underline" onClick={()=>setModal(true)}>Ayat <span className="font-normal text-gray-700 dark:text-gray-200">{ayat}</span></span>
         </p>
-        <p className="text-center container mx-auto font-extralight text-base my-5">
+        <p className="text-center container mx-auto font-extralight text-base my-5 dark:text-gray-200">
           *Ulangi bacaan beberapa kali
         </p>
         <div className="text-center container mx-auto my-10">
           <div className="flex my-6 justify-end">
             <span
-              className={` ${(fontSize === "sm") ? "bg-gray-700 text-white": "bg-gray-300"} text-xs font-extralight rounded-full h-6 w-6 flex items-center justify-center mr-1`}
+              className={` ${(fontSize === "sm") ? "bg-gray-700 text-white dark:bg-gray-900 dark:text-gray-100": "bg-gray-300"} text-xs font-extralight rounded-full h-6 w-6 flex items-center justify-center mr-1`}
               onClick={()=>setFontSize('sm')}
             >
               A
             </span>
             <span
-              className={` ${(fontSize === "md") ? "bg-gray-700 text-white": "bg-gray-300"} text-base font-extralight rounded-full h-6 w-6 flex items-center justify-center mr-1`}
+              className={` ${(fontSize === "md") ? "bg-gray-700 text-white dark:bg-gray-900 dark:text-gray-100": "bg-gray-300"} text-base font-extralight rounded-full h-6 w-6 flex items-center justify-center mr-1`}
               onClick={()=>setFontSize('md')}
             >
               A
             </span>
             <span
-              className={` ${(fontSize === "xl") ? "bg-gray-700 text-white": "bg-gray-300"} text-xl	 font-extralight rounded-full h-6 w-6 flex items-center justify-center`}
+              className={` ${(fontSize === "xl") ? "bg-gray-700 text-white dark:bg-gray-900 dark:text-gray-100": "bg-gray-300"} text-xl	 font-extralight rounded-full h-6 w-6 flex items-center justify-center`}
               onClick={()=>setFontSize('xl')}
             >
               A
             </span>
           </div>
-          <p className={`${(fontSize ==='sm') ? "text-xl" : (fontSize === 'md') ? "text-2xl" :"text-4xl"} ayat text-gray-500 ${(isHide) ? "ayat--blur" : ""}` }>
+          <p className={`${(fontSize ==='sm') ? "text-xl" : (fontSize === 'md') ? "text-2xl" :"text-4xl"} ayat text-gray-500 dark:text-gray-200 ${(isHide) ? "ayat--blur" : ""}` }>
             {
               renderSurah[0].aya_text
             }
           </p>
-          <div className="text-base font-extralight my-5" dangerouslySetInnerHTML={{__html:renderSurah[0].translation_aya_text }}></div>
+          <div className="text-base font-extralight my-5 dark:text-gray-200" dangerouslySetInnerHTML={{__html:renderSurah[0].translation_aya_text }}></div>
         </div>
         <div className="container text-center mx-auto my-10">
-          <span className={`rounded-full py-3 px-6 ${(isHide) ? "bg-gray-200" : "bg-gray-700 text-white"}`} onClick={()=> toggleHide(isHide)}>
+          <span className={`rounded-full py-3 px-6 ${(isHide) ? "bg-gray-200" : "bg-gray-700 text-white dark:bg-gray-900 dark:text-gray-200 "}`} onClick={()=> toggleHide(isHide)}>
             {isHide ? 'Tampilkan 😊' :'Sembunyikan 😅'}
           </span>
         </div>

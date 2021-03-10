@@ -31,7 +31,7 @@ function Ayah() {
   return(
     <div className="px-4">
       <UiStep step="2" />
-      <p className="text-center container mx-auto font-extralight text-xl my-10">
+      <p className="text-center container mx-auto font-extralight text-xl my-10 dark:text-gray-200">
         Surat <span className="">{selectedSurah[0].surat_name}</span>
       </p>
       {/* <p className="text-center container mx-ahto font-extralight text-xl my-10">Pilih Ayat</p> */}

@@ -7,7 +7,7 @@ function Arrow(props) {
     if(props.type === 'next') {
       return(
         <div className="arrow next">
-          <span className="text-xs font-light">{(props.text) ? props.text :'Selanjutnya'}</span>
+          <span className="text-xs font-light dark:text-gray-200">{(props.text) ? props.text :'Selanjutnya'}</span>
           {/* <img src={`${process.env.PUBLIC_URL}/arrow.png`} alt="arrow" /> */}
         </div>
       )
@@ -16,7 +16,7 @@ function Arrow(props) {
       return(
         <div className="arrow prev">
            {/* <img src={`${process.env.PUBLIC_URL}/arrow.png`} alt="arrow" /> */}
-          <span className="text-xs font-light">{(props.text) ? props.text :'Sebelumnya'}</span>
+          <span className="text-xs font-light dark:text-gray-200">{(props.text) ? props.text :'Sebelumnya'}</span>
         </div>
       )
     }

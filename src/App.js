@@ -3,6 +3,7 @@ import React from "react";
 import UiStepOne from "./container/Home";
 import UiStepTwo from "./container/Ayah";
 import UiStepThree from "./container/Detail";
+import { useEffect } from "react";
 import {
   // BrowserRouter as Router,
   HashRouter,
@@ -11,6 +12,16 @@ import {
 } from "react-router-dom";
 
 function App() {
+  useEffect(() => {
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+      document.getElementById('body').classList.add('dark:bg-gray-700')
+    } else {
+      document.documentElement.classList.remove('dark')
+      document.getElementById('body').classList.remove('dark:bg-gray-700')
+    }
+ },[]);
   return (
     <div className="container mx-auto font-sans">
       <HashRouter>
