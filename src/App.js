@@ -13,14 +13,20 @@ import {
 
 function App() {
   useEffect(() => {
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      document.documentElement.classList.add('dark')
-      document.getElementById('body').classList.add('dark:bg-gray-700')
-    } else {
-      document.documentElement.classList.remove('dark')
-      document.getElementById('body').classList.remove('dark:bg-gray-700')
-    }
+    function checkLocalStorage() {
+       // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+        document.getElementById('body').classList.add('dark:bg-gray-700')
+      } else {
+        document.documentElement.classList.remove('dark')
+        document.getElementById('body').classList.remove('dark:bg-gray-700')
+      }
+    } 
+    window.addEventListener('storage', checkLocalStorage)
+    return () => {
+      window.removeEventListener('storage', checkLocalStorage)
+    }  
  },[]);
   return (
     <div className="container mx-auto font-sans">
