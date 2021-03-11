@@ -3,6 +3,7 @@ import React from "react";
 import UiStepOne from "./container/Home";
 import UiStepTwo from "./container/Ayah";
 import UiStepThree from "./container/Detail";
+import UiDarkMode from "./components/DarkMode";
 import { useEffect } from "react";
 import {
   // BrowserRouter as Router,
@@ -30,20 +31,24 @@ function App() {
     }  
  },[]);
   return (
+    <div>
     <div className="container mx-auto font-sans">
       <HashRouter>
         <Switch>
           <Route exact path='/'>
+            <UiDarkMode/> 
             <UiStepOne/>
           </Route>
           <Route path='/surah/:id/:ayat'>
             <UiStepThree/>
           </Route>
           <Route path='/surah/:id'>
+            <UiDarkMode/>
             <UiStepTwo/>
           </Route>
         </Switch>
       </HashRouter>
+    </div>
     </div>
   );
 }
