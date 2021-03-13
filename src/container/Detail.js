@@ -95,7 +95,7 @@ function Detail() {
               A
             </span>
           </div>
-          <p className={`${(fontSize ==='sm') ? "text-xl" : (fontSize === 'md') ? "text-2xl" :"text-4xl"} ayat text-gray-500 dark:text-gray-200 ${(isHide) ? "ayat--blur" : ""}` }>
+          <p className={`${(fontSize ==='sm') ? "text-xl" : (fontSize === 'md') ? "text-2xl" :"text-4xl"} ayat text-gray-500 dark:text-gray-300 ${(isHide) ? "ayat--blur" : ""}` }>
             {
               renderSurah[0].aya_text
             }

@@ -27,14 +27,15 @@
 
 self.addEventListener('install',function(e){
     e.waitUntil(
-        caches.open('ngapalin').then((cache)=>{
+        caches.open('ngapalin-1').then((cache)=>{
             const contentToCache = [
                 '/',
                 '/favicon.ico',
                 '/index.html',
                 '/manifest.json',
                 '/app.js',
-                '/logo.png'
+                '/logo.png',
+                '/logo.inv.png',
             ]
             return cache.addAll(contentToCache)
         })
@@ -42,7 +43,6 @@ self.addEventListener('install',function(e){
 })
 
 // self.addEventListener('fetch', function(event) {
-//     console.log(event.request.url);
 //     event.respondWith(
 //         caches.match(event.request).then(function(response) {
 //             return response || fetch(event.request);
