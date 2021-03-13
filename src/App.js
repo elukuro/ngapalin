@@ -31,24 +31,24 @@ function App() {
     }  
  },[]);
   return (
-    <div>
-    <div className="container mx-auto font-sans">
-      <HashRouter>
-        <Switch>
-          <Route exact path='/'>
-            <UiDarkMode/> 
-            <UiStepOne/>
-          </Route>
-          <Route path='/surah/:id/:ayat'>
-            <UiStepThree/>
-          </Route>
-          <Route path='/surah/:id'>
-            <UiDarkMode/>
-            <UiStepTwo/>
-          </Route>
-        </Switch>
-      </HashRouter>
-    </div>
+    <div className="">
+      <div className="container mx-auto font-sans max-w-sm">
+        <HashRouter>
+          <Switch>
+            <Route exact path='/'>
+              <UiDarkMode/> 
+              <UiStepOne/>
+            </Route>
+            <Route path='/surah/:id/:ayat'>
+              <UiStepThree/>
+            </Route>
+            <Route path='/surah/:id'>
+              <UiDarkMode/>
+              <UiStepTwo/>
+            </Route>
+          </Switch>
+        </HashRouter>
+      </div>
     </div>
   );
 }
