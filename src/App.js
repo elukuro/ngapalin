@@ -31,7 +31,7 @@ function App() {
     }  
  },[]);
   return (
-    <div className="">
+    <div className="max-w-sm relative m-auto h-screen">
       <div className="container mx-auto font-sans max-w-sm">
         <HashRouter>
           <Switch>
@@ -40,6 +40,7 @@ function App() {
               <UiStepOne/>
             </Route>
             <Route path='/surah/:id/:ayat'>
+              <UiDarkMode/> 
               <UiStepThree/>
             </Route>
             <Route path='/surah/:id'>

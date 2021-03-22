@@ -10,6 +10,7 @@ function Modal(props) {
       className={`${
         open ? "opacity-1" : "opacity-0 pointer-events-none"
       }  modal fixed w-full h-full top-0 left-0 flex items-center justify-center`}
+      onClick={props.close}
     >
       <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50 dark:bg-gray-200"></div>
       <div className="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto dark:bg-gray-900">
