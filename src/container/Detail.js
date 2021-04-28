@@ -97,8 +97,8 @@ function Detail() {
         <div
           className={`
           ${(isShowModal) ? 'overflow-hidden max-h-96':''} px-4 transition-all duration-200 ease-in-out 
-          ${(isSwipping === 'Left') ? 'transform opacity-40 -rotate-6':''}
-          ${(isSwipping === 'Right') ? 'transform opacity-40 rotate-6':''}
+          ${(isSwipping === 'Left') ? 'transform opacity-20  -translate-x-20':''}
+          ${(isSwipping === 'Right') ? 'transform opacity-20  translate-x-20':''}
           `}
           {...handlers}
         >
